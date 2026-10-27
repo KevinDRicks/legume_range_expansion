@@ -1,0 +1,8 @@
+Code here extracts out the legume species names from the datasets generated Werner et al (2014) and Kates et al (2024).
+We include here the two datasets(updated_werner.csv corresponds with Werner et al, and kates_dat.csv corresponds with 
+Kates et al). In the 00_extract_data.R, the data from these contributions are loaded, reconciled with the GBIF backbone 
+taxonomy, while also identifying mismatches in the estimated symbiotic status between the two datasets. We output a mapper
+file representing the symbiotic status for these data in gbif_key_merge.csv, which will be referenced in future analyses.
+These GBIF species names are submitted to GBIF and we download all occurence data our computing cluster with the 
+01_download_bash_st1.sh script. As this is download as one enormous .csv file across >8000 legume species, in the 
+02_data_split.sh script we split these data into individual .csv files for each species. 
