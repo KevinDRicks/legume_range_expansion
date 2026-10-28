@@ -1,0 +1,8 @@
+Code here walks through the process to build spoccupancy models for each species. We first, using the 
+01_build_background_matrix.R script, build a matrix representing the occurences of legume GBIF data 
+across a spatial and temporal grid. The 02B_pure_SPAT_approach_slurm.R script loads in this matrix 
+and incorporates it into building a spatio-temporal model for each species, utilizing the other legume
+occurences to model detection probability and to generate pseudoabsences. Note that this script is run 
+as an array, and is deployed by the 02A_pure_SPAT_approach_slurm.sh script. this is because building a
+model for each species can take up to 24 hours. running as an array allows us to parallelize effort 
+and finish model building quickly.
